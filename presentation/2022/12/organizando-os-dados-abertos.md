@@ -59,7 +59,7 @@ O que **qualquer pessoa** pode **acessar**, **usar**, **modificar** e **comparti
 
 ---
 
-![width:300px](images/ckan.svg)
+![width:300px](/images/ckan.svg)
 
 ## Para quê?
 
