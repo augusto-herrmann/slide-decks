@@ -20,7 +20,7 @@ _class:
 
 ## December 2022
 
-* [Organizando os Dados Abertos](2022/12organizando-os-dados-abertos) (in Portuguese)
+* [Organizando os Dados Abertos](2022/12/organizando-os-dados-abertos) (in Portuguese)
 
 ## Made with Marp
 
