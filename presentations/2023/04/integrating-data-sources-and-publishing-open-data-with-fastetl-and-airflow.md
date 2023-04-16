@@ -139,7 +139,7 @@ Ministry of Management and Innovation in Public Services, Brazil
 
 # Example of an open data publication pipeline
 
-![example workflow of a DAG in Airflow](example-open-data-publication-pipeline.png)
+![example workflow of a DAG in Airflow](/slide-decks/example-open-data-publication-pipeline.png)
 
 ---
 
