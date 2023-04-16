@@ -41,7 +41,7 @@ jobs:
         env:
           MARP_USER: root:root
 
-      - name: Marp Build (2022 folder)
+      - name: Marp Build (presentations/year folders)
         uses: docker://marpteam/marp-cli:v1.7.0
         with:
           args: -I presentations/ -o build/
