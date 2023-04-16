@@ -3,8 +3,8 @@ marp: true
 theme: default
 style: |
   @import 'https://fonts.googleapis.com/css?family=Fira+Sans:300,500';
-  body {
-    font-family: 'Fira Sans';
+  section {
+    font-family: 'Fira Sans', sans-serif;
   }
   section:not(.lead)::before {
     content: 'csv,conf,v7';
