@@ -16,7 +16,7 @@ _class:
 
 # Augusto Herrmann's presentations
 
-### accessible on the web!
+### accessible [on the web](https://herrmann.tech/slide-decks/)!
 
 ## April 2023
 
