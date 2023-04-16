@@ -2,6 +2,7 @@
 marp: true
 theme: default
 style: |
+  @import 'https://fonts.googleapis.com/css?family=Fira+Sans:300,500';
   body {
     font-family: 'Fira Sans';
   }
