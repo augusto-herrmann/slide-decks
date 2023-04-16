@@ -104,9 +104,9 @@ Ministry of Management and Innovation in Public Services, Brazil
 
 # What is it
 
-- a free and open source plugin for Apache Airflow
-- has features that are useful for making ETL pipelines
-- speeds up the data pipeline development process
+- a free and open source plugin for Apache Airflow ![airflow icon](../../../images/airflow-icon.png)
+- has features that are useful for making ETL pipelines 🛠
+- speeds up the data pipeline development process 🏃
 
 
 ---
@@ -115,8 +115,8 @@ Ministry of Management and Innovation in Public Services, Brazil
 
 - code we wrote had been using extensively could be useful to others who use Airflow
 - we 💓 free and open source software
-- expand our network
-- get feedback and contributions
+- expand our network of developers 👥
+- get feedback and contributions 👂
 
 ---
 
@@ -133,24 +133,154 @@ Ministry of Management and Innovation in Public Services, Brazil
 
 # How we use Airflow
 
+and **fastETL** to
+
 - periodically synchronize data sources in the data lake
   - sources are databases, spreadsheets (Excel, Google, Sharepoint) and others
   - data is used for analysis, auditing and to create dashboards
 - publish open data on the open data portal
 - notify people about publications in the official gazette ([Ro-DOU](https://github.com/economiagovbr/Ro-dou/) project)
 - notifications by email and Slack
-- manage sprints using the Trello API
+- manage sprint stories and tasks using the Trello API
 
 ---
+
+![bg right map visualization of TaxiGov rides](https://github.com/economiagovbr/taxigovviz/raw/main/assets/images/mapa-de-calor-taxigov.png)
+
+<div>
+  <img style="float:right; width:100px" src="../../../images/taxigov-logo.png" />
+
+# Example use case: TaxiGov
+
+- ride system for public officials using Taxis
+- over 900k rides since 2016
+- 35k+ users 
+- used by 163 public organizations in federal, state and municipal governments
+
+</div>
+
+---
+
+![bg left photo from above of traffic Avenida Paulista, São Paulo](../../../images/vinicius-amnx-amano-MmfCeGqNxp8-unsplash.jpg)
+
+
+# TaxiGov: the data sources
+
+- 29 heterogeneous databases with various table schemas
+- 5 different suppliers
+- many fields of unstructured text (motive, status, organization)
+
+---
+
+![bg right:30% 80% logo of TaxiGov](../../../images/taxigov-airflow-datasets.png)
+
+# TaxiGov: the data pipelines
+
+1. collect from the 29 data sources (starts daily at 7:45 am)
+2. clean the data with **fastETL patchwork** and load it into a unified schema
+3. select data with no privacy restrictions and publish it as open data (finished before 8:30 am 🕣)
+
+---
+
+# TaxiGov: cleaning data with patchwork
+
+![bg left width:600px part of the pipeline: patchwork cleaning of data](../../../images/taxigov-data-pachwork.png)
+
+**Example:** Geographical coordinates in sources have sometimes
+
+- wrong decimal separator
+- wrong signal
+- values multiplied by 1,000 or 10,000
+- etc. 
+
+---
+
+# fastETL patchwork
+
+using **GeoPointDataCleaner**
+
+```python
+def clean_coordinates(tmp_dir: str, source: str, columns: list):
+        source_config = TaxiGovPipeline.get_config(source)
+
+        patch = DataPatch.from_file(
+            file_name=os.path.join(tmp_dir, f'{source}.zip'),
+            source_id=source,
+            schema=source_config['schema'],
+            table=source_config['table'],
+            primary_keys=source_config['primary_keys'])
+
+        logging.info('%d linhas lidas para a fonte "%s."', len(patch.df), source)
+        cleaner = GeoPointDataCleaner(
+            patch.df,
+            source_id=source,
+            schema_name=source_config['schema'],
+            table_name=source_config['table'],
+            primary_keys=source_config['primary_keys'],
+            columns=columns)
+        cleaner.clean()
+        cleaner.write(tmp_dir)
+```
+
+---
+
+# table metadata
+
+read from the database with fastETL **TableComments**
+
+<div class="container">
+  <div class="col">
+    <img alt="table structure in DBeaver" src="../../../images/taxigov-columns-dbeaver.png" />
+  </div>
+  <div class="col">
+  </div>
+</div>
+
+
+---
+
+# TaxiGov: open data publication
 <style scoped>
   section {
     background-image: none;
   }
 </style>
 
-# Example of an open data publication pipeline
-
 ![example workflow of a DAG in Airflow](/slide-decks/images/example-open-data-publication-pipeline.png)
+
+---
+
+# Using open data with Frictionless
+
+```python
+In [1]: from frictionless import Package
+
+In [2]: package = Package("https://repositorio.dados.gov.br/seges/taxigov/v2/datapackage.yaml")
+
+In [3]: package.resource_names
+Out[3]: 
+['corridas-7-dias',
+ 'passageiros-solicitantes',
+ 'corridas',
+ 'corridas-2017',
+ 'corridas-2018',
+ 'corridas-2019',
+ 'corridas-2020',
+ 'corridas-2021',
+ 'corridas-2022',
+ 'corridas-2023']
+
+In [4]: df = package.get_resource("passageiros-solicitantes").to_pandas()
+
+In [5]: df[df["nome_passageiro"].str.upper().str.startswith("AUGUSTO HERRMANN") == True]
+Out[5]: 
+         base_origem           nome_passageiro          nome_solicitante cpf_solicitante   ano  mes  distancia   valor  quantidade
+105925  TAXIGOV_DF_1  AUGUSTO HERRMANN BATISTA  AUGUSTO HERRMANN BATISTA  ***.303.276-**  2018   11     30.735  125.65           4
+111136  TAXIGOV_DF_1  AUGUSTO HERRMANN BATISTA  AUGUSTO HERRMANN BATISTA  ***.303.276-**  2018   10     26.615   97.50           3
+115336  TAXIGOV_DF_1  AUGUSTO HERRMANN BATISTA  AUGUSTO HERRMANN BATISTA  ***.303.276-**  2018    9     35.175  125.07           4
+134833  TAXIGOV_DF_1  AUGUSTO HERRMANN BATISTA  AUGUSTO HERRMANN BATISTA  ***.303.276-**  2018    5     33.043  112.87           3
+143470  TAXIGOV_DF_1  AUGUSTO HERRMANN BATISTA  AUGUSTO HERRMANN BATISTA  ***.303.276-**  2018    3     49.065  173.81           5
+```
 
 ---
 
@@ -174,4 +304,21 @@ Ministry of Management and Innovation in Public Services, Brazil
   - Using **CKAN** or dados.gov.br's API to update dataset metadata
   - Using **Frictionless Tabular Data Packages** to write OpenDocument Text format **data dictionaries**
 
+---
 
+# Credits
+
+- fastETL logo by Moisés Lima
+- photo by Alex Lvrs on Unsplash
+- photo by Vinicius "amnx" Amano on Unsplash
+
+---
+
+# Contact
+
+- data engineering team @ the Secretariat for Management and Innovation: seges.cginf@economia.gov.br
+- me: https://herrmann.tech
+
+# Questions & feedback
+
+## 👆
