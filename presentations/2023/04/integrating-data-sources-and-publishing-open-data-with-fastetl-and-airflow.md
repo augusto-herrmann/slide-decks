@@ -1,6 +1,7 @@
 ---
 marp: true
 theme: default
+html: true
 style: |
   body {
     font-family: 'Fira Sans';
