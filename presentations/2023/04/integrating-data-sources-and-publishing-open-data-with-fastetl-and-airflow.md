@@ -6,6 +6,9 @@ style: |
   section {
     font-family: 'Fira Sans', sans-serif;
   }
+  section:not(.lead) {
+    background-image: url('/slide-decks/images/alex-lvrs-Md6_qA-BMis-unsplash.jpg');
+  }
   section:not(.lead)::before {
     content: 'csv,conf,v7';
     position: absolute;
