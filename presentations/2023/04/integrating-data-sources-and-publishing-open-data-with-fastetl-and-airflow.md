@@ -12,7 +12,6 @@ style: |
     bottom: 5px;
     left: 20px;
     color: white;
-    width: 95%;
     height: 40px;
     text-align: left;
     border-bottom: 5px solid #f9afa8;
