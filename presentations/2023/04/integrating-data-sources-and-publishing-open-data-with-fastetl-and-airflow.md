@@ -6,6 +6,11 @@ style: |
   section {
     font-family: 'Fira Sans', sans-serif;
   }
+  section.lead > p > em {
+    background-color: #730302;
+    padding: 5px 20px 10px;
+    font-style: normal;
+  }
   section:not(.lead) {
     background-image: url('/slide-decks/images/alex-lvrs-Md6_qA-BMis-unsplash.jpg');
   }
@@ -48,6 +53,8 @@ style: |
 
 Augusto Herrmann
 19.4.2023
+
+*csv,conf,v7*
 
 ---
 
@@ -145,6 +152,51 @@ and **fastETL** to
 
 ---
 
+# Why use fastETL
+
+- fast development of data pipelines
+- main features:
+  - Full or incremental **replication** of tables in SQL Server, and Postgres databases (and MySQL sources)
+  - Load data from **GSheets** and from spreadsheets on **Samba/Windows** networks
+  - Extracting **CSV** from SQL
+  - Clean data using custom data patching tasks (e.g. for messy geographical coordinates, mapping canonical values for columns, etc.)
+
+---
+
+# Why use fastETL
+
+- more features:
+  - Querying the Brazilian National Official Gazette's (**DOU**'s) API
+  - Using a **Open Street Routing Machine** service to calculate route distances
+  - Using **CKAN** or dados.gov.br's API to update dataset metadata
+  - Using **Frictionless Tabular Data Packages** to write **data dictionaries** in OpenDocument Text format
+
+---
+
+# Example: replicating a database table
+
+```python
+t0 = DbToDbOperator(
+    task_id="copy_data",
+    source={
+        "conn_id": airflow_source_conn_id,
+        "schema": source_schema,
+        "table": table_name,
+    },
+    destination={
+        "conn_id": airflow_dest_conn_id,
+        "schema": dest_schema,
+        "table": table_name,
+    },
+    destination_truncate=True,
+    copy_table_comments=True,
+    chunksize=10000,
+    dag=dag,
+)
+```
+
+---
+
 ![bg right map visualization of TaxiGov rides](https://github.com/economiagovbr/taxigovviz/raw/main/assets/images/mapa-de-calor-taxigov.png)
 
 <div>
@@ -168,11 +220,11 @@ and **fastETL** to
 
 - 29 heterogeneous databases with various table schemas
 - 5 different suppliers
-- many fields of unstructured text (motive, status, organization)
+- many fields of unstructured text (motive, status, organization) – messy!
 
 ---
 
-![bg right:30% 80% logo of TaxiGov](/slide-decks/images/taxigov-airflow-datasets.png)
+![bg right:50% 80% logo of TaxiGov](/slide-decks/images/taxigov-airflow-datasets.png)
 
 # TaxiGov: the data pipelines
 
@@ -232,7 +284,7 @@ read column descriptions from the database with fastETL's **TableComments**
 
 ```python
 table_metadata = TableComments(
-    conn_id=MSSQL_CONN_ID, schema="TAXIGOV_UNIFICADO", table="corridas"
+    conn_id=MSSQL_CONN_ID, schema="TAXIGOV", table="corridas"
 )
 df = table_metadata.table_comments
 for field in schema.fields:
@@ -248,7 +300,8 @@ and record a Tabular Data Package
 
 ## table metadata
 
-from Tabular Data Package (schema)
+from Tabular Data Package
+
 ```yaml
 schema:
   fields:
@@ -327,30 +380,9 @@ Out[5]:
 
 # Visualizing open data
 
-<irfame title="heat map of taxi rides on TaxiGov" width="100%" height="600px" src="https://economiagovbr.github.io/taxigovviz/maps/heatmap.html"></iframe>
+<iframe title="heat map of taxi rides on TaxiGov" width="100%" height="400" src="https://economiagovbr.github.io/taxigovviz/maps/heatmap.html"></iframe>
 
 Available at: https://economiagovbr.github.io/taxigovviz/
-
----
-
-# Why use fastETL
-
-- fast development of data pipelines
-- main features:
-  - Full or incremental **replication** of tables in SQL Server, and Postgres databases (and MySQL sources)
-  - Load data from **GSheets** and from spreadsheets on **Samba/Windows** networks
-  - Extracting **CSV** from SQL
-  - Clean data using custom data patching tasks (e.g. for messy geographical coordinates, mapping canonical values for columns, etc.)
-
----
-
-# Why use fastETL
-
-- more features:
-  - Querying the Brazilian National Official Gazette's (**DOU**'s) API
-  - Using a **Open Street Routing Machine** service to calculate route distances
-  - Using **CKAN** or dados.gov.br's API to update dataset metadata
-  - Using **Frictionless Tabular Data Packages** to write OpenDocument Text format **data dictionaries**
 
 ---
 
