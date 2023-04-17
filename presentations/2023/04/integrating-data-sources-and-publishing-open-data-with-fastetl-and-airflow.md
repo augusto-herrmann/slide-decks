@@ -121,7 +121,7 @@ Ministry of Management and Innovation in Public Services, Brazil
 
 # Why we made it
 
-- code we wrote had been using extensively could be useful to others who use Airflow
+- code we wrote had been using extensively **since 2019** could be useful to others who use Airflow
 - we 💓 free and open source software
 - expand our network of developers 👥
 - get feedback and contributions 👂
@@ -130,7 +130,7 @@ Ministry of Management and Innovation in Public Services, Brazil
 
 ![bg right:30% 80% Airflow logo](/slide-decks/images/airflow-logo.png)
 
-# Our team and Airflow
+# About Airflow
 
 [Apache Airflow](https://airflow.apache.org/) is
 - free and open source software with a robust and active community
@@ -139,7 +139,7 @@ Ministry of Management and Innovation in Public Services, Brazil
 
 ---
 
-# How we use Airflow
+# We use Airflow
 
 and **fastETL** to
 
@@ -155,7 +155,7 @@ and **fastETL** to
 
 # Why use fastETL
 
-- fast development of data pipelines
+- develop data pipelines faster
 - main features:
   - Full or incremental **replication** of tables in SQL Server, and Postgres databases (and MySQL sources)
   - Load data from **GSheets** and from spreadsheets on **Samba/Windows** networks
@@ -192,7 +192,6 @@ t0 = DbToDbOperator(
     destination_truncate=True,
     copy_table_comments=True,
     chunksize=10000,
-    dag=dag,
 )
 ```
 
@@ -407,6 +406,7 @@ pip install apache-airflow-providers-fastetl
 - fastETL logo by Moisés Lima
 - photo by Alex Lvrs on Unsplash
 - photo by Vinicius "amnx" Amano on Unsplash
+- presentation done using [Marp](https://marp.app) by Yuki Hattori
 
 ---
 
