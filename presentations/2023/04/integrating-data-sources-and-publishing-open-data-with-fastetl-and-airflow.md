@@ -325,6 +325,13 @@ Out[5]:
 
 ---
 
+# Visualizing open data
+
+<irfame title="heat map of taxi rides on TaxiGov" width="100%" height="600px" src="https://economiagovbr.github.io/taxigovviz/maps/heatmap.html"></iframe>
+
+Available at: https://economiagovbr.github.io/taxigovviz/
+
+---
 
 # Why use fastETL
 
@@ -355,11 +362,14 @@ Out[5]:
 
 ---
 
+# Where to find
+
+https://github.com/economiagovbr/FastETL
+
 # Contact
 
 - data engineering team @ the Secretariat for Management and Innovation: seges.cginf@economia.gov.br
 - me: https://herrmann.tech
 
 # Questions & feedback
-
-## 👆
+👆❓
