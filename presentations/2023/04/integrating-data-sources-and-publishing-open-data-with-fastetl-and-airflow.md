@@ -197,6 +197,21 @@ t0 = DbToDbOperator(
 
 ---
 
+# DbToDbOperator
+
+- Copies can be:
+  - full data
+  - incremental
+- Source databases can be:
+  - Postgres
+  - SQL Server
+  - MySQL
+- Destination databases can be
+  - Postgres
+  - SQL Server
+
+---
+
 ![bg right map visualization of TaxiGov rides](https://github.com/economiagovbr/taxigovviz/raw/main/assets/images/mapa-de-calor-taxigov.png)
 
 <div>
@@ -406,7 +421,7 @@ pip install apache-airflow-providers-fastetl
 - fastETL logo by Moisés Lima
 - photo by Alex Lvrs on Unsplash
 - photo by Vinicius "amnx" Amano on Unsplash
-- presentation done using [Marp](https://marp.app) by Yuki Hattori
+- presentation done [in Markdown](https://github.com/augusto-herrmann/slide-decks/blob/main/presentations/2023/04/integrating-data-sources-and-publishing-open-data-with-fastetl-and-airflow.md) using [Marp](https://marp.app) by Yuki Hattori
 
 ---
 
