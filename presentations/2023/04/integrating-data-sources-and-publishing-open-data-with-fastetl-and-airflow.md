@@ -7,6 +7,7 @@ style: |
     font-family: 'Fira Sans', sans-serif;
   }
   section.lead > p > em {
+    color: white;
     background-color: #730302;
     padding: 5px 20px 10px;
     font-style: normal;
