@@ -104,7 +104,7 @@ Ministry of Management and Innovation in Public Services, Brazil
 
 # What is it
 
-- a free and open source plugin for Apache Airflow ![airflow icon](../../../images/airflow-icon.png)
+- a free and open source plugin for Apache Airflow ![airflow icon](/slide-decks/images/airflow-icon.png)
 - has features that are useful for making ETL pipelines 🛠
 - speeds up the data pipeline development process 🏃
 
@@ -148,7 +148,7 @@ and **fastETL** to
 ![bg right map visualization of TaxiGov rides](https://github.com/economiagovbr/taxigovviz/raw/main/assets/images/mapa-de-calor-taxigov.png)
 
 <div>
-  <img style="float:right; width:100px" src="../../../images/taxigov-logo.png" />
+  <img style="float:right; width:100px" src="/slide-decks/images/taxigov-logo.png" />
 
 # Example use case: TaxiGov
 
@@ -161,7 +161,7 @@ and **fastETL** to
 
 ---
 
-![bg left photo from above of traffic Avenida Paulista, São Paulo](../../../images/vinicius-amnx-amano-MmfCeGqNxp8-unsplash.jpg)
+![bg left photo from above of traffic Avenida Paulista, São Paulo](/slide-decks/images/vinicius-amnx-amano-MmfCeGqNxp8-unsplash.jpg)
 
 
 # TaxiGov: the data sources
@@ -172,7 +172,7 @@ and **fastETL** to
 
 ---
 
-![bg right:30% 80% logo of TaxiGov](../../../images/taxigov-airflow-datasets.png)
+![bg right:30% 80% logo of TaxiGov](/slide-decks/images/taxigov-airflow-datasets.png)
 
 # TaxiGov: the data pipelines
 
@@ -184,7 +184,7 @@ and **fastETL** to
 
 # TaxiGov: cleaning data with patchwork
 
-![bg left width:600px part of the pipeline: patchwork cleaning of data](../../../images/taxigov-data-pachwork.png)
+![bg left width:600px part of the pipeline: patchwork cleaning of data](/slide-decks/images/taxigov-data-pachwork.png)
 
 **Example:** Geographical coordinates in sources have sometimes
 
@@ -224,18 +224,59 @@ def clean_coordinates(tmp_dir: str, source: str, columns: list):
 
 ---
 
-# table metadata
+![bg left contain table structure in DBeaver](/slide-decks/images/taxigov-columns-dbeaver.png)
 
-read from the database with fastETL **TableComments**
+## table metadata
 
-<div class="container">
-  <div class="col">
-    <img alt="table structure in DBeaver" src="../../../images/taxigov-columns-dbeaver.png" />
-  </div>
-  <div class="col">
-  </div>
-</div>
+read column descriptions from the database with fastETL's **TableComments**
 
+```python
+table_metadata = TableComments(
+    conn_id=MSSQL_CONN_ID, schema="TAXIGOV_UNIFICADO", table="corridas"
+)
+df = table_metadata.table_comments
+for field in schema.fields:
+    if not field.description and any(df.name.isin([field.name])):
+        field.description = df[df.name == field.name].iloc[0].comment
+```
+
+and record a Tabular Data Package
+
+---
+
+![bg right contain data dictionary containing a description of the table's columns](/slide-decks/images/taxigov-data-dict.png)
+
+## table metadata
+
+from Tabular Data Package (schema)
+```yaml
+schema:
+  fields:
+    - name: base_origem
+      type: string
+      title: Base de origem
+      description: Identificação da base de dados de origem. Normalmente contém
+        a sigla do Estado e um número de versão, ex. TAXIGOV_DF_3.
+      constraints:
+        required: true
+        minLength: 10
+        maxLength: 100
+    - name: qru_corrida
+      type: integer
+      title: Código da Corrida
+      description: Código que identifica a corrida unicamente dentro da base de
+        origem. Não é garantida a ausência de colisão com outros identificadores
+        em outras bases de origem.
+      constraints:
+        required: true
+        minimum: 0
+    - name: orgao_nome
+      type: string
+      title: Nome do órgão ou entidade
+      description: Nome do órgão, por extenso, sem abreviações ou siglas, conforme
+        consta no SIORG.
+```
+to data dictionary document with **fastETL**'s **DocumentTemplateToDataDictionaryOperator**
 
 ---
 
