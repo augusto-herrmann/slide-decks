@@ -387,6 +387,21 @@ Available at: https://economiagovbr.github.io/taxigovviz/
 
 ---
 
+# Where to find fastETL
+
+https://github.com/economiagovbr/FastETL
+
+## Installing
+
+- add the [`apache-airflow-providers-fastetl`](https://pypi.org/project/apache-airflow-providers-fastetl/) Python package to your Airflow environment.
+- or
+
+```bash
+pip install apache-airflow-providers-fastetl
+```
+
+---
+
 # Credits
 
 - fastETL logo by Moisés Lima
@@ -394,10 +409,6 @@ Available at: https://economiagovbr.github.io/taxigovviz/
 - photo by Vinicius "amnx" Amano on Unsplash
 
 ---
-
-# Where to find
-
-https://github.com/economiagovbr/FastETL
 
 # Contact
 
