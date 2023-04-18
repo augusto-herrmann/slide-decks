@@ -160,12 +160,16 @@ Ministry of Management and Innovation in Public Services, Brazil
 
 ---
 
+![bg left wall panel with the message "co-criar"](/slide-decks/images/cocriar.jpg)
+
 # Why we made it
 
+- to develop data pipelines faster
+- promote code reuse
 - code we wrote had been using extensively **since 2019** could be useful to others who use Airflow
 - we 💓 free and open source software
-- expand our network of developers 👥
-- get feedback and contributions 👂
+- share knowledge with other teams, expand our network of developers 👥
+- get feedback & contributions 👂
 
 ---
 
@@ -191,16 +195,6 @@ and **fastETL** to
 - notify people about publications in the official gazette ([Ro-DOU](https://github.com/economiagovbr/Ro-dou/) project)
 - notifications by email and Slack
 - manage sprint stories and tasks using the Trello API
-
----
-
-![bg right wall panel with the message "co-criar"](/slide-decks/images/cocriar.jpg)
-
-# Why use fastETL
-
-- develop data pipelines faster
-- promote code reuse
-- share knowledge with other teams
 
 ---
 
