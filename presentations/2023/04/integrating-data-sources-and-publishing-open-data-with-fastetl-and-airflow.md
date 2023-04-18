@@ -2,7 +2,48 @@
 marp: true
 theme: default
 style: |
-  @import 'https://fonts.googleapis.com/css?family=Fira+Sans:300,500';
+  /* fira-sans-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/fonts/fira-sans/fira-sans-v16-latin-regular.eot'); /* IE9 Compat Modes */
+    src: url('/assets/fonts/fira-sans/fira-sans-v16-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('/assets/fonts/fira-sans/fira-sans-v16-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+        url('/assets/fonts/fira-sans/fira-sans-v16-latin-regular.woff') format('woff'), /* Modern Browsers */
+        url('/assets/fonts/fira-sans/fira-sans-v16-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('/assets/fonts/fira-sans/fira-sans-v16-latin-regular.svg#FiraSans') format('svg'); /* Legacy iOS */
+  }
+
+  /* fira-sans-italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Fira Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url('/assets/fonts/fira-sans/fira-sans-v16-latin-italic.eot'); /* IE9 Compat Modes */
+    src: url('/assets/fonts/fira-sans/fira-sans-v16-latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('/assets/fonts/fira-sans/fira-sans-v16-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+        url('/assets/fonts/fira-sans/fira-sans-v16-latin-italic.woff') format('woff'), /* Modern Browsers */
+        url('/assets/fonts/fira-sans/fira-sans-v16-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('/assets/fonts/fira-sans/fira-sans-v16-latin-italic.svg#FiraSans') format('svg'); /* Legacy iOS */
+  }
+
+  /* fira-sans-600 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/assets/fonts/fira-sans/fira-sans-v16-latin-600.eot'); /* IE9 Compat Modes */
+    src: url('/assets/fonts/fira-sans/fira-sans-v16-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('/assets/fonts/fira-sans/fira-sans-v16-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+        url('/assets/fonts/fira-sans/fira-sans-v16-latin-600.woff') format('woff'), /* Modern Browsers */
+        url('/assets/fonts/fira-sans/fira-sans-v16-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('/assets/fonts/fira-sans/fira-sans-v16-latin-600.svg#FiraSans') format('svg'); /* Legacy iOS */
+  }
+
   section {
     font-family: 'Fira Sans', sans-serif;
   }
@@ -156,21 +197,26 @@ and **fastETL** to
 # Why use fastETL
 
 - develop data pipelines faster
-- main features:
-  - Full or incremental **replication** of tables in SQL Server, and Postgres databases (and MySQL sources)
-  - Load data from **GSheets** and from spreadsheets on **Samba/Windows** networks
-  - Extracting **CSV** from SQL
-  - Clean data using custom data patching tasks (e.g. for messy geographical coordinates, mapping canonical values for columns, etc.)
+- promote code reuse
+- share knowledge with other teams
 
 ---
 
-# Why use fastETL
+# Features
 
-- more features:
-  - Querying the Brazilian National Official Gazette's (**DOU**'s) API
-  - Using a **Open Street Routing Machine** service to calculate route distances
-  - Using **CKAN** or dados.gov.br's API to update dataset metadata
-  - Using **Frictionless Tabular Data Packages** to write **data dictionaries** in OpenDocument Text format
+- Full or incremental **replication** of tables in SQL Server, and Postgres databases (and MySQL sources)
+- Load data from **GSheets** and from spreadsheets on **Samba/Windows** networks
+- Extracting **CSV** from SQL
+- Clean data using custom data patching tasks (e.g. for messy geographical coordinates, mapping canonical values for columns, etc.)
+
+---
+
+# Features
+
+- Querying the Brazilian National Official Gazette's (**DOU**'s) API
+- Using a **Open Street Routing Machine** service to calculate route distances
+- Using **CKAN** or dados.gov.br's API to update dataset metadata
+- Using **Frictionless Tabular Data Packages** to write **data dictionaries** in OpenDocument Text format
 
 ---
 
@@ -431,4 +477,4 @@ pip install apache-airflow-providers-fastetl
 - me: https://herrmann.tech
 
 # Questions & feedback
-👆❓
+👆❓ (também em português / también en español)
