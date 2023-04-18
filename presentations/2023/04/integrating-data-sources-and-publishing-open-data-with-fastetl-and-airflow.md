@@ -194,6 +194,8 @@ and **fastETL** to
 
 ---
 
+![bg right wall panel with the message "co-criar"](/slide-decks/images/cocriar.jpg)
+
 # Why use fastETL
 
 - develop data pipelines faster
@@ -243,18 +245,20 @@ t0 = DbToDbOperator(
 
 ---
 
+![bg left loading...](/slide-decks/images/loading.jpg)
+
 # DbToDbOperator
 
 - Copies can be:
   - full data
   - incremental
+- Destination databases can be
+  - Postgres
+  - SQL Server
 - Source databases can be:
   - Postgres
   - SQL Server
   - MySQL
-- Destination databases can be
-  - Postgres
-  - SQL Server
 
 ---
 
