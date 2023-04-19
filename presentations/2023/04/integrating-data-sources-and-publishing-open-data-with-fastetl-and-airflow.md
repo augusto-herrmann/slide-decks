@@ -451,12 +451,12 @@ https://github.com/economiagovbr/FastETL
 
 ## Installing
 
-- add the [`apache-airflow-providers-fastetl`](https://pypi.org/project/apache-airflow-providers-fastetl/) Python package to your Airflow environment.
-- or
-
-```bash
-pip install apache-airflow-providers-fastetl
-```
+- install the `msodbcsql17` and `unixodbc-dev` libraries to your Airflow environment, then
+  - add the [`apache-airflow-providers-fastetl`](https://pypi.org/project/apache-airflow-providers-fastetl/) Python package .
+  - or
+    ```bash
+    pip install apache-airflow-providers-fastetl
+    ```
 
 ---
 
