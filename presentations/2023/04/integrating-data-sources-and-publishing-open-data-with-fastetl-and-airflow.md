@@ -272,7 +272,7 @@ t0 = DbToDbOperator(
 
 ---
 
-![bg left photo from above of traffic Avenida Paulista, São Paulo](/slide-decks/images/vinicius-amnx-amano-MmfCeGqNxp8-unsplash.jpg)
+![bg left photo from above of traffic Avenida Paulista, São Paulo](/slide-decks/images/2023/04/vinicius-amnx-amano-MmfCeGqNxp8-unsplash.jpg)
 
 
 # TaxiGov: the data sources
@@ -283,7 +283,7 @@ t0 = DbToDbOperator(
 
 ---
 
-![bg right:50% 80% logo of TaxiGov](/slide-decks/images/taxigov-airflow-datasets.png)
+![bg right:50% 80% logo of TaxiGov](/slide-decks/images/2023/04/taxigov-airflow-datasets.png)
 
 # TaxiGov: the data pipelines
 
@@ -295,7 +295,7 @@ t0 = DbToDbOperator(
 
 # TaxiGov: cleaning data with patchwork
 
-![bg left width:600px part of the pipeline: patchwork cleaning of data](/slide-decks/images/taxigov-data-pachwork.png)
+![bg left width:600px part of the pipeline: patchwork cleaning of data](/slide-decks/images/2023/04/taxigov-data-pachwork.png)
 
 **Example:** Geographical coordinates in sources have sometimes
 
@@ -335,7 +335,7 @@ def clean_coordinates(tmp_dir: str, source: str, columns: list):
 
 ---
 
-![bg left contain table structure in DBeaver](/slide-decks/images/taxigov-columns-dbeaver.png)
+![bg left contain table structure in DBeaver](/slide-decks/images/2023/04/taxigov-columns-dbeaver.png)
 
 ## table metadata
 
@@ -355,7 +355,7 @@ and record a Tabular Data Package
 
 ---
 
-![bg right contain data dictionary containing a description of the table's columns](/slide-decks/images/taxigov-data-dict.png)
+![bg right contain data dictionary containing a description of the table's columns](/slide-decks/images/2023/04/taxigov-data-dict.png)
 
 ## table metadata
 
@@ -399,7 +399,7 @@ to data dictionary document with **fastETL**'s **DocumentTemplateToDataDictionar
   }
 </style>
 
-![example workflow of a DAG in Airflow](/slide-decks/images/example-open-data-publication-pipeline.png)
+![example workflow of a DAG in Airflow](/slide-decks/images/2023/04/example-open-data-publication-pipeline.png)
 
 ---
 
