@@ -21,6 +21,7 @@ _class:
 ## April 2023
 
 - [Integrating data sources and publishing open data with fastELT & Airflow](2023/04/integrating-data-sources-and-publishing-open-data-with-fastetl-and-airflow)
+- [Ágora de dados: csv,conf,v7](2023/04/agora-de-dados-csv-conf)
 
 ## December 2022
 
