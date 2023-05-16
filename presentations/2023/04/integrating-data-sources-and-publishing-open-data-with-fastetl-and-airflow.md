@@ -125,7 +125,7 @@ https://herrmann.tech/slide-decks/2023/04/integrating-data-sources-and-publishin
 
 # The team who made it
 
-![](https://contributors-img.web.app/image?repo=economiagovbr/FastETL)
+![](https://contributors-img.web.app/image?repo=gestaogovbr/FastETL)
 <div class="container">
   <div class="col">
     <ul>
@@ -138,7 +138,7 @@ https://herrmann.tech/slide-decks/2023/04/integrating-data-sources-and-publishin
     <ul>
       <li> <a href="https://github.com/washolive">Washington Oliveira</a> </li>
       <li> <a href="https://github.com/gutaors">Gustavo Silveira</a> </li>
-      <li> ... and <a href="https://github.com/economiagovbr/FastETL/graphs/contributors">more </a> </li>
+      <li> ... and <a href="https://github.com/gestaogovbr/FastETL/graphs/contributors">more </a> </li>
     </ul>
   </div>
 </div>
@@ -192,7 +192,7 @@ and **fastETL** to
   - sources are databases, spreadsheets (Excel, Google, Sharepoint) and others
   - data is used for analysis, auditing and to create dashboards
 - publish open data on the open data portal
-- notify people about publications in the official gazette ([Ro-DOU](https://github.com/economiagovbr/Ro-dou/) project)
+- notify people about publications in the official gazette ([Ro-DOU](https://github.com/gestaogovbr/Ro-dou/) project)
 - notifications by email and Slack
 - manage sprint stories and tasks using the Trello API
 
@@ -256,7 +256,7 @@ t0 = DbToDbOperator(
 
 ---
 
-![bg right map visualization of TaxiGov rides](https://github.com/economiagovbr/taxigovviz/raw/main/assets/images/mapa-de-calor-taxigov.png)
+![bg right map visualization of TaxiGov rides](https://github.com/gestaogovbr/taxigovviz/raw/main/assets/images/mapa-de-calor-taxigov.png)
 
 <div>
   <img style="float:right; width:100px" src="/slide-decks/images/taxigov-logo.png" />
@@ -439,15 +439,15 @@ Out[5]:
 
 # Visualizing open data
 
-<iframe title="heat map of taxi rides on TaxiGov" width="100%" height="400" src="https://economiagovbr.github.io/taxigovviz/maps/heatmap.html"></iframe>
+<iframe title="heat map of taxi rides on TaxiGov" width="100%" height="400" src="https://gestaogovbr.github.io/taxigovviz/maps/heatmap.html"></iframe>
 
-Available at: https://economiagovbr.github.io/taxigovviz/
+Available at: https://gestaogovbr.github.io/taxigovviz/
 
 ---
 
 # Where to find fastETL
 
-https://github.com/economiagovbr/FastETL
+https://github.com/gestaogovbr/FastETL
 
 ## Installing
 
