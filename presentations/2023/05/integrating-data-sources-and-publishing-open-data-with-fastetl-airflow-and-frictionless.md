@@ -593,4 +593,4 @@ https://github.com/gestaogovbr/FastETL
 - me: https://herrmann.tech
 
 # Questions & feedback
-👆❓ (também em português / también en español)
+👆❓ are welcome and appreciated
