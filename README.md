@@ -20,16 +20,16 @@ _class:
 
 ## May 2023
 
-- [Integrating data sources and publishing open data with fastETL, Airflow & Frictionless Data](https://herrmann.tech/slide-decks/2023/05/integrating-data-sources-and-publishing-open-data-with-fastetl-airflow-and-frictionless)
+- [Integrating data sources and publishing open data with fastETL, Airflow & Frictionless Data](https://herrmann.tech/slide-decks/2023/05/integrating-data-sources-and-publishing-open-data-with-fastetl-airflow-and-frictionless) - Frictionless Data Community Call
 
 ## April 2023
 
-- [Integrating data sources and publishing open data with fastELT & Airflow](2023/04/integrating-data-sources-and-publishing-open-data-with-fastetl-and-airflow)
+- [Integrating data sources and publishing open data with fastELT & Airflow](2023/04/integrating-data-sources-and-publishing-open-data-with-fastetl-and-airflow) - [csv,conf,v7](https://csvconf.com/)
 - [Ágora de dados: csv,conf,v7](2023/04/agora-de-dados-csv-conf)
 
 ## December 2022
 
-- [Organizando os Dados Abertos](2022/12/organizando-os-dados-abertos) (in Portuguese)
+- [Organizando os Dados Abertos](2022/12/organizando-os-dados-abertos) (in Portuguese) - for RDM in UFRJ
 
 ## Made with Marp
 
