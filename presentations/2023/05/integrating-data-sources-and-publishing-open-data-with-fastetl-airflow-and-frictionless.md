@@ -71,6 +71,7 @@ style: |
   section:not(.lead)::after {
     color: white;
     background-color: black;
+    opacity: 70%;
     bottom: 0;
     right: 0;
     width: 100%;
