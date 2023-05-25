@@ -89,7 +89,7 @@ style: |
 
 <!-- _class: lead invert -->
 
-# Integrating data sources and publishing open data with fastETL & Airflow
+# Integrating data sources and publishing open data with fastETL, Airflow & Frictionless Data
 
 ![bg right:40% 80% fastETL logo](/slide-decks/images/fastetl.svg)
 

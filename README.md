@@ -18,6 +18,10 @@ _class:
 
 ### accessible [on the web](https://herrmann.tech/slide-decks/)!
 
+## May 2023
+
+- [](https://herrmann.tech/slide-decks/2023/05/integrating-data-sources-and-publishing-open-data-with-fastetl-airflow-and-frictionless)
+
 ## April 2023
 
 - [Integrating data sources and publishing open data with fastELT & Airflow](2023/04/integrating-data-sources-and-publishing-open-data-with-fastetl-and-airflow)
