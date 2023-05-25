@@ -70,7 +70,7 @@ style: |
   }
   section:not(.lead)::after {
     color: white;
-    background-color: #730302;
+    background-color: black;
     bottom: 0;
     right: 0;
     width: 100%;
