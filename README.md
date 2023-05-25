@@ -20,7 +20,7 @@ _class:
 
 ## May 2023
 
-- [](https://herrmann.tech/slide-decks/2023/05/integrating-data-sources-and-publishing-open-data-with-fastetl-airflow-and-frictionless)
+- [Integrating data sources and publishing open data with fastETL, Airflow & Frictionless Data](https://herrmann.tech/slide-decks/2023/05/integrating-data-sources-and-publishing-open-data-with-fastetl-airflow-and-frictionless)
 
 ## April 2023
 
