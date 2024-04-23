@@ -201,7 +201,7 @@ https://herrmann.tech/slide-decks/2024/04/skills-and-competencies-for-enabling-o
   - e.g. have an internal "red team" try do re-identify anonymized data
 - omit or mask sensitive fields
 - data aggregation is helpful, but care should be taken
-- evaluate risks and document every decision
+- assess risks and document every decision
 
 ---
 
