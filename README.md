@@ -18,6 +18,10 @@ _class:
 
 ### accessible [on the web](https://herrmann.tech/slide-decks/)!
 
+## April 2024
+
+- [Skills and Competencies for enabling Open Data in public administration](https://herrmann.tech/slide-decks/2024/04/skills-and-competencies-for-enabling-open-data) - [Open Data Charter Implementation Working Group](https://opendatacharter.org/iwg/) Monthly Call
+
 ## May 2023
 
 - [Integrating data sources and publishing open data with fastETL, Airflow & Frictionless Data](https://herrmann.tech/slide-decks/2023/05/integrating-data-sources-and-publishing-open-data-with-fastetl-airflow-and-frictionless) - Frictionless Data Community Call
