@@ -126,10 +126,103 @@ https://herrmann.tech/slide-decks/2024/04/skills-and-competencies-for-enabling-o
 
 # Transition
 
-- 2019: open data policy management transferred to Office of the Comptroller-General (Decree 9.903)
+- 2019: open data policy management transferred to Office of the Comptroller-General – "CGU" (Decree 9.903)
 - 2020: Secretariat for Management and Innovation
   - Data management and data governance
   - responsible for overarching systems: data from all ministries and agencies
   - Apache Airflow for orchestrating data pipelines
     - also for Open Data where applicable!
 
+---
+
+# Remaining Challenges
+
+- Data integration across national and local levels of government
+- Integration of international data and developing standards
+- Establish an effective feedback loop with data users
+- Identifying high value data and fostering data use
+- Maturity in data management and data governance
+- Data anonymization
+- Automatic data licensing
+
+---
+
+# Data integration across levels of government
+
+- federated data portals: make search easier for citizens
+- develop common data standards
+- fostering a network of public officials across local administration for discussing and sharing experiences on open data
+- leverage interested civil society groups and projects (e.g. [Querido Diário](https://queridodiario.ok.org.br/), [Frag den Staat](https://fragdenstaat.de/))
+
+---
+
+# International data integration and data standards
+
+- thematic networks that share experiences and discuss data standards in specific domains
+  - [GIFT](https://fiscaltransparency.net/)
+  - [Open Spending](https://www.openspending.org/)
+- international data standards in specific domains
+  - [Linked Open Vocabularies](https://lov.linkeddata.es/dataset/lov/)
+  - [Fiscal Data Package](https://specs.frictionlessdata.io/fiscal-data-package/#language)
+- integrated searchable databases of international data
+  - [OpenCorporates](https://opencorporates.com/) / [OpenLEIs](http://openleis.com/)
+  - [EveryPolitician](http://everypolitician.org/) (discontinued)
+
+---
+
+# Effective feedback loop with data users
+
+- data portals must have a feedback mechanism so data users can report errors, ask for clarification, etc.
+
+---
+
+# Identifying high value data and fostering data use
+
+- public consultations for open data plans are important but not enough
+- data publishers must engage with the data using communities, e.g. in data science / data engineering forums
+- participate in events such as [Open Data Day](https://opendataday.org/)
+- data publishers should hold events to showcase their best data
+
+---
+
+# Maturity in data management and data governance
+
+- the organization should build capacity for public officials
+- the departments and people responsible for data should be defined and easy to find out
+- have an established data lifecycle
+- make open data updates periodic and automatic
+- data should be well documented internally, this will in turn enable better documentation for open data
+
+---
+
+# Data anonymization
+
+- should be treated as a security issue (risk of re-identification)
+  - e.g. have an internal "red team" try do re-identify anonymized data
+- omit or mask sensitive fields
+- data aggregation is helpful, but care should be taken
+- evaluate risks and document every decision
+
+---
+
+# Automatic data licensing
+
+- licensing issues are complex
+- depend on national copyright / database right laws
+- legal analysis should be centralized, achieve an all encompassing solutions
+- license choice should come automatically from the top – neither middle level officials nor developers can't be expected to deal with such complex legal issues
+- usually best to use:
+  - [Public Domain Mark](https://creativecommons.org/publicdomain/mark/1.0/) / [Public Domain Dedication License](https://opendatacommons.org/licenses/pddl/1-0/) / [CC-Zero](https://creativecommons.org/publicdomain/zero/1.0/)
+  - [CC-Attribution](https://opendefinition.org/licenses/cc-by/) (4.0 or later)
+
+---
+
+# Thank you
+
+## Contact
+
+- data engineering team @ the Secretariat for Management and Innovation: seges.cginf@gestao.gov.br
+- me: https://herrmann.tech
+
+## Questions & feedback
+👆❓ are welcome and appreciated
