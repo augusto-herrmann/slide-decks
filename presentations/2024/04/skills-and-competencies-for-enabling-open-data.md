@@ -149,6 +149,8 @@ https://herrmann.tech/slide-decks/2024/04/skills-and-competencies-for-enabling-o
 
 # Data integration across levels of government
 
+- Brazil has 5,570 municipalities
+  - even keeping track of every data portal URL is hard
 - federated data portals: make search easier for citizens
 - develop common data standards
 - fostering a network of public officials across local administration for discussing and sharing experiences on open data
