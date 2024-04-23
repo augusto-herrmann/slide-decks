@@ -180,6 +180,7 @@ https://herrmann.tech/slide-decks/2024/04/skills-and-competencies-for-enabling-o
 
 # Identifying high value data and fostering data use
 
+- Open Data Charter / Barometer / Index list of datasets are a start but not enough
 - public consultations for open data plans are important but not enough
 - data publishers must engage with the data using communities, e.g. in data science / data engineering forums
 - participate in events such as [Open Data Day](https://opendataday.org/)
